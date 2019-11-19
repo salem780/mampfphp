@@ -41,23 +41,11 @@
 <body>
     <div class="content">
         <div class="container-fluid">
-            <div class="row justify-content-md-center" style="height: 10%;">
+            <div class="row justify-content-md-center" style="height: 13%;">
                 <h1 class="text-center">Herzlich Willkommen Partner</h1>
             </div>
-            <div class="row justify-content-md-center" style="height: 10%;">
+            <div class="row justify-content-md-center" style="height: 13%;">
                 <h2 class="text-center">Neuen Mittagstisch anlegen</h2>
-            </div>
-            <div class="row justify-content-md-center">
-                <div class="col">
-                    <form>
-                        <input class="form-control" id="Week" type="week" />
-                    </form>
-                </div>
-                <div class="col">
-                    <form>
-                        <button class="form-control" id="buttonMenüAnlegen" onclick="alert('Sie haben neue Mittagsmenüs angelegt.')">Menü anlegen</button>
-                    </form>
-                </div>
             </div>
         </div>
 
@@ -65,11 +53,7 @@
             <table class="table table-striped" cellspacing="0" cellpadding="0">
                 <thead>
                     <tr>
-                        <th scope="col-">Mo</th>
-                        <th scope="col">Di</th>
-                        <th scope="col">Mi</th>
-                        <th scope="col">Do</th>
-                        <th scope="col">Fr</th>
+                        <th scope="col-">Datum</th>
                         <th scope="col">Name des Gerichts</th>
                         <th scope="col">Vegetarisch</th>
                         <th scope="col">Preis</th>
@@ -77,226 +61,38 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td valign="middle">
-                            <div class="form-check" style="padding-left: 6px;">
-                                <input id="MoCheck" type="checkbox" />
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-check" style="padding-left: 6px;">
-                                <input id="DiCheck" type="checkbox" />
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-check" style="padding-left: 6px;">
-                                <input id="MiCheck" type="checkbox" />
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-check" style="padding-left: 6px;">
-                                <input id="DoCheck" type="checkbox" />
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-check" style="padding-left: 6px;">
-                                <input id="FrCheck" type="checkbox" />
-                            </div>
-                        </td>
                         <td>
                             <form>
-                                <input class="form-control" id="GerichtNameBox" type="text" placeholder="Name des Gerichts" />
+                                <input class="form-control" id="Datum1" type="date">
                             </form>
                         </td>
                         <td>
-                            <div class="form-check" style="padding-left: 40px;">
-                                <input id="VegCheck" type="checkbox" />
+                            <form>
+                                <input class="form-control" id="GerichtNameBox1" type="text" placeholder="Name des Gerichts" />
+                            </form>
+                        </td>
+                        <td>
+                            <div class="form-check" style="padding-left: 80px;">
+                                <input id="VegCheck1" type="checkbox" />
                             </div>
                         </td>
                         <td>
                             <form>
-                                <input class="form-control" id="PreisBox" type="number" placeholder="0,00€">
+                                <input class="form-control" id="PreisBox1" type="number" placeholder="0,00€">
                             </form>
                         </td>
                     </tr>
 
+                </tr>
 
-
-                    <tr>
-                        <td>
-                            <div class="form-check" style="padding-left: 6px;">
-                                <input id="MoCheck" type="checkbox" />
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-check" style="padding-left: 6px;">
-                                <input id="DiCheck" type="checkbox" />
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-check" style="padding-left: 6px;">
-                                <input id="MiCheck" type="checkbox" />
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-check" style="padding-left: 6px;">
-                                <input id="DoCheck" type="checkbox" />
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-check" style="padding-left: 6px;">
-                                <input id="FrCheck" type="checkbox" />
-                            </div>
-                        </td>
-                        <td>
-                            <form>
-                                <input class="form-control" id="GerichtNameBox" type="text" placeholder="Name des Gerichts" />
-                            </form>
-                        </td>
-                        <td>
-                            <div class="form-check" style="padding-left: 40px;">
-                                <input id="VegCheck" type="checkbox" />
-                            </div>
-                        </td>
-                        <td>
-                            <form>
-                                <input class="form-control" id="PreisBox" type="number" placeholder="0,00€">
-                            </form>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <div class="form-check" style="padding-left: 6px;">
-                                <input id="MoCheck" type="checkbox" />
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-check" style="padding-left: 6px;">
-                                <input id="DiCheck" type="checkbox" />
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-check" style="padding-left: 6px;">
-                                <input id="MiCheck" type="checkbox" />
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-check" style="padding-left: 6px;">
-                                <input id="DoCheck" type="checkbox" />
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-check" style="padding-left: 6px;">
-                                <input id="FrCheck" type="checkbox" />
-                            </div>
-                        </td>
-                        <td>
-                            <form>
-                                <input class="form-control" id="GerichtNameBox" type="text" placeholder="Name des Gerichts" />
-                            </form>
-                        </td>
-                        <td>
-                            <div class="form-check" style="padding-left: 40px;">
-                                <input id="VegCheck" type="checkbox" />
-                            </div>
-                        </td>
-                        <td>
-                            <form>
-                                <input class="form-control" id="PreisBox" type="number" placeholder="0,00€">
-                            </form>
-                        </td>
-                    </tr>
-
-
-                    <tr>
-                        <td>
-                            <div class="form-check" cstyle="padding-left: 6px;">
-                                <input id="MoCheck" type="checkbox" />
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-check" style="padding-left: 6px;">
-                                <input id="DiCheck" type="checkbox" />
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-check" style="padding-left: 6px;">
-                                <input id="MiCheck" type="checkbox" />
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-check" style="padding-left: 6px;">
-                                <input id="DoCheck" type="checkbox" />
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-check" style="padding-left: 6px;">
-                                <input id="FrCheck" type="checkbox" />
-                            </div>
-                        </td>
-                        <td>
-                            <form>
-                                <input class="form-control" id="GerichtNameBox" type="text" placeholder="Name des Gerichts" />
-                            </form>
-                        </td>
-                        <td>
-                            <div class="form-check" style="padding-left: 40px;">
-                                <input id="VegCheck" type="checkbox" />
-                            </div>
-                        </td>
-                        <td>
-                            <form>
-                                <input class="form-control" id="PreisBox" type="number" placeholder="0,00€">
-                            </form>
-                        </td>
-                    </tr>
-
-
-                    <tr>
-                        <td>
-                            <div class="form-check" style="padding-left: 6px;">
-                                <input id="MoCheck" type="checkbox" />
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-check" style="padding-left: 6px;">
-                                <input id="DiCheck" type="checkbox" />
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-check" style="padding-left: 6px;">
-                                <input id="MiCheck" type="checkbox" />
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-check" style="padding-left: 6px;">
-                                <input id="DoCheck" type="checkbox" />
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-check" style="padding-left: 6px;">
-                                <input id="FrCheck" type="checkbox" />
-                            </div>
-                        </td>
-                        <td>
-                            <form>
-                                <input class="form-control" id="GerichtNameBox" type="text" placeholder="Name des Gerichts" />
-                            </form>
-                        </td>
-                        <td>
-                            <div class="form-check" style="padding-left: 40px;">
-                                <input id="VegCheck" type="checkbox" />
-                            </div>
-                        </td>
-                        <td>
-                            <form>
-                                <input class="form-control" id="PreisBox" type="number" placeholder="0,00€">
-                            </form>
-                        </td>
-                    </tr>
-
+                    
                 </tbody>
             </table>
+            <div class="row justify-content-md-center">
+                <div class="col">
+                    <button class="form-control" id="buttonMenüAnlegen" onclick="newdish()">Menü anlegen</button>
+                </div>
+            </div>
         </div>
     </div>
     <footer class="page-footer font-small" style="background-color: rgb(248,249,250);">
@@ -327,9 +123,12 @@
             border-color: rgb(179, 120, 87) !important;
         }
     </style>
+
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="javascript/Mampf_Partner_JS.js"></script>
 </body>
 
 </html>
