@@ -1,0 +1,5 @@
+.table th {
+    padding: .75rem;
+    vertical-align: center;
+    border-top: 1px solid #dee2e6;
+}
