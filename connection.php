@@ -1,6 +1,4 @@
-<html>
-    <body>
-        <?php
+        <?php 
 		
         $email = $_POST['email'];
         $password = $_POST['password'];
@@ -29,12 +27,10 @@
 				else {
 					
 					echo '<form action="login.html" method="POST">';
-					echo '<input type="submit">Falsch du Faggot</input>';
+					echo '<input type="submit">Falsch</input>';
 					echo '</form>';
 					}
 
         
         ?>
-    </body>
-</html>
- 
+   
