@@ -1,7 +1,4 @@
 
-
-
-
 <!doctype html>
 <html lang="de">
 
@@ -15,6 +12,7 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <title>Mampf</title>
+
 </head>
 
 <body>
@@ -41,13 +39,15 @@
           </li>
 
         </ul>
-        <form>
-          <input class="btn btn-primary" type="submit" value="Login für Restaurants" />
+        <form >
+          <input class="btn btn-primary" type="submit" name = "login" value="Login für Restaurants" />
         </form>
       </div>
   </nav>
 
   <div class="container">
+
+
     <div class="row">
       <div class="col">
 
@@ -55,7 +55,7 @@
 
 
 
-        <form action="connection.php" method="POST">
+        <form  action="connection.php"  method="POST">
           <div class="form-group">
             <label for="exampleInputEmail1">Email Adresse</label>
             <input type="email" class="form-control" name="email" aria-describedby="emailHelp"
@@ -70,7 +70,8 @@
             eine
             E-Mail an mampf@rv.de mit dem Betreff "Passwort vergessen".
             Unsere Mitarbeiter werden Sie dann umgehend Kontaktieren.</small>
-          <button type="submit" class="btn btn-primary" id="login"> Anmelden </button>
+          <button type="submit" class="btn btn-primary" id="login"> Anmelden 
+          </button>
         </form>
 
       </div>
@@ -85,17 +86,50 @@
         <p>Wenn Sie ein Restaurant in Ravensburg führen und dieses auf dieser Website
           ebenfalls anbieten wollen, nehmen sie bitte Kontakt mit uns auf unter folgender
           Adresse:<br />
-          E-Mail: mampf@rv.de <br />
+          E-Mail: mampf@rv.de     <br />
+        
         </p>
+         <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d24775.857565751998!2d9.600842981541447!3d47.7901469468571!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sravensburg%20restaurants!5e0!3m2!1sde!2sde!4v1575750973274!5m2!1sde!2sde" width="600" height="300" frameborder="500" style="border:0;" allowfullscreen=""></iframe>
 
-
+        
 
       </div>
+
+      
+
     </div>
-  </div>
+
+
+
+    </div>
+  
   <footer class="page-footer font-small" style="background-color: rgb(248,249,250);">
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© 2019 Copyright: Mampf
+     
+        <script>
+            function startTime() {
+              var today = new Date();
+              var h = today.getHours();
+              var m = today.getMinutes();
+              var s = today.getSeconds();
+              m = checkTime(m);
+              s = checkTime(s);
+              document.getElementById('txt').innerHTML =
+              h + ":" + m + ":" + s;
+              var t = setTimeout(startTime, 500);
+            }
+            function checkTime(i) {
+              if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+              return i;
+            }
+            </script>
+            </head>
+            
+            <body onload="startTime()">
+            
+            <div id="txt"></div>
+
     </div>
     <!-- Copyright -->
 
@@ -110,6 +144,8 @@
       border-color: rgb(179, 120, 87) !important;
       font-size: 1.5rem !important;
       line-height: 1.5 !important;
+      padding-bottom:10%;
+      padding-top :10%;
     }
 
     .btn-primary,
@@ -164,29 +200,6 @@
 
 
 
-  <!-- <script>
-
-
-$(document).ready(function() {
-
-
-  $('#login').on("click", function () {
-
-      $.post(
-
-          'MampfBootstrap/MampfServlet',
-          {
-              email: $("#exampleInputEmail1").val(),
-              password: $("#exampleInputPassword1").val()
-          },
-
-          function (result) {
-
-              console.log("worked");
-          })
-  })
-})
-</script>-->
 
 </body>
 
