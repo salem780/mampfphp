@@ -3,6 +3,7 @@
 
 <head>
 <meta charset="utf-8">
+  
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -14,10 +15,7 @@
 </head>
 
 <body>
-<?php
 
-session_start();
-?>
 <style>
     
 
@@ -28,12 +26,15 @@ session_start();
       background-color: rgb(179, 120, 87) !important;
       border-color: rgb(179, 120, 87) !important;
     }
-
+/* responsives Design */
 @media screen and (min-width: 961px) {
-   div#viewid { background-image: url('image/stadtansichtkom.jpg');  width: 100vw; height: 83vh; opacity: 1; background-repeat: no-repeat; background-size: cover; background-position: center center;">
-} div#rowid {padding-top:25%}
 
-.btn-secondary,
+   div#viewid { background-image: url('image/stadtansichtkom.jpg');  width: 100vw; height: 83vh; 
+   opacity: 1; background-repeat: no-repeat; background-size: cover; background-position: center center;} 
+   
+   div#rowid {padding-top:25%}
+
+    .btn-secondary,
     .btn-secondary:hover,
     .btn-secondary:active,
     .btn-secondary:visited {
@@ -42,16 +43,18 @@ session_start();
       font-size: 1.5rem !important;
       line-height: 1.5 !important;
     }
-
     .form-control {
       font-size: 1.5rem !important;
     }
     
-
 }
+/* responsives Design */
 @media screen and (max-width: 961px) {
-   div#viewid { background-image: url('image/stadtansichtkom.jpg');  width: 100vw; height: 83vh; opacity: 1; background-repeat: no-repeat; background-size: cover; background-position: center center; }
+   div#viewid { background-image: url('image/stadtansichtkom.jpg');  width: 100vw; height: 83vh; 
+   opacity: 1; background-repeat: no-repeat; background-size: cover; background-position: center center; }
+  
   div#rowid {padding-top:50%}
+  
   .font-weight-bold{
       size: 17px !important; 
       color: white !important;
@@ -74,17 +77,28 @@ session_start();
         font-size:10px !important;
 }
 
-
-
+/* Tabellenstyle */
+th {
+  cursor: pointer;
 }
-
+table {
+  table-layout: fixed;
+  border-spacing: 0;
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 7px;
+}
+}
+</style>
 
  
-  </style>
 
-
+<!-- Header in Form einer navbar, gleich wie bei faq.php und login.php (wenn man auf FAQ ist, erscheint FAQ dunkler ) -->
 <nav class="navbar navbar-default navbar-static-top navbar-expand-md navbar-light bg-light">
 
+<!-- Bildlink zur index.php-->
 <a class="navbar-brand" href="#">
   <a href="index.php"> <img src="image/logo_transparent.jpg" width="200" height="auto" alt="">
   </a>
@@ -107,15 +121,16 @@ session_start();
   </div>
 </nav>
 
+<!-- JS: Weiterleitung, wenn auf Button "Login für Restaurants" geklickt -->
+<script>
+    
+    function relocate_login() {
+      location.href = login.html;
+    }
+  </script>
 
-
-
+<!-- Hintergrundbild mit Form und bei erfolgreichem Select ausgegebene Tabelle -->
 <div class="view" id="viewid">
-<!--style="background-image: url('image/stadtansichtkom.jpg');  width: 100vw; height: 83vh; opacity: 1; background-repeat: no-repeat; background-size: cover; background-position: center center;">
-
--->
-
-
 
 <div class="container">
 
@@ -125,12 +140,13 @@ session_start();
 
     <div class="font-weight-bold" style ="font-size: 25px; color: white" >
 
-      <div class="form-group row" id ='links' >
+      <div class="form-group row">
       
         <div class="col-2">
         </div>
         <label class="control-label col-3 font-weight-bold" for="text"><b>Mittagstisch am </b></label>
         <div class="col-4">
+        <!-- schreiben der eingegebenen Daten zurück in die Form, idetisch beim Maximalen Preis -->
           <input id="dishdate" name="Dishdate" type="date" value = "<?php $Dishdate= (isset($_POST['Dishdate'])    ? $_POST['Dishdate']    : ''); print ($Dishdate) ?>"class="form-control" >
 
         </div>
@@ -140,7 +156,7 @@ session_start();
     
 
 
-      <div class="form-group row" id ="rechts">
+      <div class="form-group row">
     
         <div class="col-2"></div>
         <label class="control-label col-3" for="price"><b>Maximaler Preis </b></label>
@@ -152,7 +168,6 @@ session_start();
             </div>
           </div>
         </div>
-        <!-- <div class="col-sm-2"></div>-->
         <div class="col-2"><button id="submit" name="submit" type="submit" 
             class="btn btn-secondary">Suchen</button>
         </div>
@@ -167,27 +182,21 @@ session_start();
 
 
 
+<!-- Tabelle wird erst eingeblendet bei erfolgreichem select durch script -->
 <div class="container font" id="tableid" style="display:none" >
 <div class="row" id="rowid" style="padding-top:1%"> 
     </div>
 
-    <script>
-    
-
-    function relocate_login() {
-      location.href = login.html;
-    }
-
-    
-
-  </script>
+   
     <?php
 
+// Prüfung ob Inputforms null sind
 if (isset($_POST['submit'])) {
   
   $Dishdate    = (isset($_POST['Dishdate'])    ? $_POST['Dishdate']    : '');
   $Maxprice    = (isset($_POST['Maxprice'])    ? $_POST['Maxprice']    : '');
 
+// Wenn Datum leer ist Alert, keine Prüfung für maxpreis
 if (($_POST['Dishdate']) == "" ) {
   echo ("<script LANGUAGE='JavaScript'>
   
@@ -196,43 +205,41 @@ if (($_POST['Dishdate']) == "" ) {
   windows.location.href='stand0812.php';
    </script>");}
 
-   $pdo = new PDO('mysql:host=localhost;dbname=mampf', 'root', '');
-   $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+// Datenbankzugriff mithilfe von PHP Data Objects 
 
+
+try {
+   $pdo = new PDO('mysql:host=localhost;dbname=mampf', 'root', '');
+
+// Abfrage, wenn maxprice und datum eingegeben wurden --> sql mit prepared statements (Vorteil: Parameter von DBS auf Gültigkeit geprüft und schneller)
    if (($_POST['Maxprice']) <> "" && ($_POST['Dishdate']) <> "" ){
-    $stmt = $pdo->prepare('SELECT dish, dishday, veg, price, lunch.restaurant AS na, restaurant.street AS str, 
+   //vorbereitetes Statement mit benannten Parametern
+   $stmt = $pdo->prepare('SELECT dish, dishday, veg, price, lunch.restaurant AS na, restaurant.street AS str, 
     restaurant.plz AS pl, restaurant.town AS tow 
     FROM lunch, restaurant 
     WHERE lunch.restaurant = restaurant.name AND dishday = :Dishdate and price <= :Maxprice' );
-
+//Statement ausführen und übergeben von Variablenwert 
  $stmt->execute(array('Dishdate' => $Dishdate, 'Maxprice' => $Maxprice ));
 
-   
+//Prüfen ob Einträge gefunden wurden, wenn ja Tabelle einblenden und Form verschieben, ansonsten Alert ausgeben und Seite neu laden 
  if ($stmt ->rowCount() > 0) {
      
-     
-   
    echo ("<script LANGUAGE='JavaScript'>
-   
    function suche(){
-   
      document.getElementById('rowid').style.paddingTop='4%';
       document.getElementById('tableid').style.display='block';
-      
-
     }
-  suche(); </script>");
+  suche(); 
+  </script>");
    
   }else{
     echo ("<script LANGUAGE='JavaScript'>
-  
   window.alert('Kein Mittagessen vorhanden! ');   
-
   windows.location.href='index.php';
    </script>");}
   }
 
+// Abfrage, wenn nur Datum eingegeben wurde (siehe oben)
    if (($_POST['Maxprice']) == ""&& ($_POST['Dishdate']) <> ""){
 
 $stmt = $pdo->prepare('SELECT dish, dishday, veg, price, lunch.restaurant AS na, restaurant.street AS str, 
@@ -243,47 +250,35 @@ $stmt = $pdo->prepare('SELECT dish, dishday, veg, price, lunch.restaurant AS na,
    
   if ($stmt ->rowCount() > 0) {
    
-   echo ("<script LANGUAGE='JavaScript'>
-   
-  
+   echo ("<script LANGUAGE='JavaScript'>  
    function such(){
-   
      document.getElementById('rowid').style.paddingTop='4%';
       document.getElementById('tableid').style.display='block';
-     
-
     }
     such();
    </script>");
 
     }else{
     echo ("<script LANGUAGE='JavaScript'>
-  
   window.alert('Kein Mittagessen vorhanden! ');   
-
   windows.location.href='index.php';
    </script>");}
   }
+}catch (PDOException $er) {
+  print "Error!: " . $er->getMessage() . "<br/>";
+  die();
+} 
+
 }
-   
 
-
-    
-
-
-
-
-   
-
-
- 
+// Funktion zur Umwandlung von Sonderzeichen 
  $e = function ($value) {
      return htmlspecialchars($value, ENT_COMPAT, 'UTF-8'); 
  } 
 ?>
 
 
-
+<!-- Ausgabeteil der Tabelle -->
       <div class="form-group row">
         
         <div class="col-12">
@@ -291,13 +286,14 @@ $stmt = $pdo->prepare('SELECT dish, dishday, veg, price, lunch.restaurant AS na,
 <table class="table-border table-responsive table-striped w-auto" id ="tabe" style= 'background-color: rgb(255,255,255);width:100%'>
       
           <tr>
-              <th  style = 'width = 10%'onclick="sortTable(0)">Gericht</th>
+<!-- Tabelle kann durch Klicken auf Überschriften sortiert werden -->
+              <th  onclick="sortTable(0)">Gericht</th>
               <th  onclick="sortTable(1)">Tag</th>
               <th  onclick="sortTable(2)">Preis</th>
               <th  onclick="sortTable(3)">Veg</th>
               <th  onclick="sortTable(4)">Restaurant</th>
           </tr>
-          <!-- $neuertext = wordwrap( $e($row['dish']), 90, "<br />\n" );echo $neuertext;-->
+<!-- gefundene Einträge der SQL-Anweisung übergeben und darstellen in Tabelle -->
           <?php foreach($stmt as $row): ?>
           <tr>
               <td><?php echo $e($row['dish']) ?></td>
@@ -309,75 +305,46 @@ $stmt = $pdo->prepare('SELECT dish, dishday, veg, price, lunch.restaurant AS na,
           <?php endforeach; ?>
       </table>
       </div> 
-        
-        
-    </div>
           
-      </div>   
-
-
-
-
-   
     </div>
-<!--responsives Design -->
-
-<!--<div class="c" id="viewid2">
-    <div class="view"  
-style="background-image: url('image/stadtansichtkom.jpg');  width: 100vw; height: 90vh; opacity: 1; background-repeat: no-repeat; background-size: cover; background-position: center center;">
-
--->
+ </div>   
+   
+</div>
 
 
 
-    <script>
+<script>
+
+  // Funktion, zum Sortieren der Tabellenspalten
 function sortTable(n) {
   var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
   table = document.getElementById("tabe");
   switching = true;
-  // Set the sorting direction to ascending:
   dir = "asc";
-  /* Make a loop that will continue until
-  no switching has been done: */
   while (switching) {
-    // Start by saying: no switching is done:
     switching = false;
     rows = table.rows;
-    /* Loop through all table rows (except the
-    first, which contains table headers): */
     for (i = 1; i < (rows.length - 1); i++) {
-      // Start by saying there should be no switching:
       shouldSwitch = false;
-      /* Get the two elements you want to compare,
-      one from current row and one from the next: */
       x = rows[i].getElementsByTagName("TD")[n];
       y = rows[i + 1].getElementsByTagName("TD")[n];
-      /* Check if the two rows should switch place,
-      based on the direction, asc or desc: */
       if (dir == "asc") {
         if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-          // If so, mark as a switch and break the loop:
           shouldSwitch = true;
           break;
         }
       } else if (dir == "desc") {
         if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-          // If so, mark as a switch and break the loop:
           shouldSwitch = true;
           break;
         }
       }
     }
     if (shouldSwitch) {
-      /* If a switch has been marked, make the switch
-      and mark that a switch has been done: */
       rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
       switching = true;
-      // Each time a switch is done, increase this count by 1:
       switchcount ++;
     } else {
-      /* If no switching has been done AND the direction is "asc",
-      set the direction to "desc" and run the while loop again. */
       if (switchcount == 0 && dir == "asc") {
         dir = "desc";
         switching = true;
@@ -387,40 +354,12 @@ function sortTable(n) {
 }
 </script>
 
-<style>
-
-
-th {
-  cursor: pointer;
-}
-
-
-table {
-  table-layout: fixed;
-  border-spacing: 0;
-  width: 100%;
-  border-collapse: collapse;
-}
-
-
-th, td {
-  padding: 7px;
-}
-
-</style>
-
+<!-- Footer mit Coyright identisch auf anderen Seiten -->
   <footer class="page-footer font-small" style="background-color: rgb(248,249,250);
   bottom: 0; width: 100%;">
-
-    <!-- Copyright -->
     <div class="footer-copyright text-center py-3"> © 2019 Copyright: Mampf
     </div>
-    <!-- Copyright -->
-
   </footer>
-
-</script>
-
 
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

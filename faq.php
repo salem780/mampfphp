@@ -12,7 +12,42 @@
   </head>
   <body>
 
+  <style>
+/* responsives Design */
 
+@media screen and (min-width: 961px) {
+    .page-footer{
+      background-color: rgb(248,249,250); position:absolute;
+  bottom: 0; width: 100%;
+    }}
+@media screen and (max-width: 961px) {
+    .page-footer{
+      background-color: rgb(248,249,250);}
+    }
+/* Linktextfarbe verändern */
+.white-text{
+  color: rgb(179, 120, 87)
+}
+/* Buttons anpassen */
+        .btn-secondary, .btn-secondary:hover, .btn-secondary:active, .btn-secondary:visited {
+          background-color: rgb(179, 120, 87) !important;
+          border-color:  rgb(179, 120, 87) !important;
+          font-size: 1.5rem!important;
+          line-height: 1.5 !important;}
+          .form-control {
+          font-size: 1.5rem !important;}
+          .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+          background-color: rgb(179, 120, 87) !important;
+          border-color:  rgb(179, 120, 87) !important;}
+
+    
+.text-secondary{
+  color: rgb(179, 120, 87);
+}
+   
+  </style>
+
+<!-- Navigationleiste wie index.php-->
         <nav class="navbar navbar-default navbar-static-top navbar-expand-md navbar-light bg-light">
 
                 <a class="navbar-brand" href="#">
@@ -34,23 +69,24 @@
                 </div>
               </nav>
 
+<!-- FAQ mithilfe von Accordion (Elemente auf- und zufahren lassen) -->
               
    <div class = 'container' style="padding-top: 2%;">
         <h2> Frequently Ask Questions</h2>        
         
     <div class style="padding-bottom: 2%;"></div>
-<div class="accordion md-accordion accordion-1" id="accordionEx23" role="tablist">
+<div class="accordion md-accordion accordion-1" id="accordion" role="tablist">
     <div class="card">
       <div class="card-header" role="tab" id="heading">
         <h5 class="text-secondary">
-          <a class=" collapsed font white-text" data-toggle="collapse" href="#collapse96" 
-          aria-expanded="false" aria-controls="collapse96">
+          <a class=" collapsed font white-text" data-toggle="collapse" href="#collapse1" 
+          aria-expanded="false" aria-controls="collapse1">
             Welchen Nutzen bietet mir MAMPF?
           </a>
         </h5>
       </div>
-      <div id="collapse96" class="collapse" role="tabpanel" aria-labelledby="heading96"
-        data-parent="#accordionEx23">
+      <div id="collapse1" class="collapse" role="tabpanel" aria-labelledby="heading1"
+        data-parent="#accordion">
         <div class="card-body">
           <div class="row my-4">
             <div class="col-md-8">
@@ -66,14 +102,14 @@
     <div class="card">
       <div class="card-header" role="tab" id="heading">
         <h5 class="text-secondary">
-          <a class="collapsed font white-text" data-toggle="collapse" href="#collapse97"
-            aria-expanded="false" aria-controls="collapse97">
+          <a class="collapsed font white-text" data-toggle="collapse" href="#collapse2"
+            aria-expanded="false" aria-controls="collapse2">
             Welche Restaurants nehmen teil?
           </a>
         </h5>
       </div>
-      <div id="collapse97" class="collapse" role="tabpanel" aria-labelledby="heading97"
-        data-parent="#accordionEx23">
+      <div id="collapse2" class="collapse" role="tabpanel" aria-labelledby="heading2"
+        data-parent="#accordion">
         <div class="card-body">
           <div class="row my-4">
             <div class="col-md-6" >
@@ -88,6 +124,7 @@
             </div>
             <div class="col-md-6 ">
               <div class="view z-depth-1">
+              <!-- Einbinden von Google my Maps -->
                 <iframe src="https://www.google.com/maps/d/embed?mid=1B2Gf6sF_nTg9oeSsMgBD3079T8dLO14G&ll=47.78071132589029%2C9.614377104631103&z=17" width="500" height="300"  ></iframe>
               </div>
             </div>
@@ -98,14 +135,14 @@
     <div class="card">
       <div class="card-header" role="tab" id="heading">
         <h5 >
-          <a class="collapsed font white-text" data-toggle="collapse" href="#collapse98"
-            aria-expanded="false" aria-controls="collapse98">
+          <a class="collapsed font white-text" data-toggle="collapse" href="#collapse3"
+            aria-expanded="false" aria-controls="collapse3">
             Wie kann ich als Restaurant teilnehmen?
           </a>
         </h5>
       </div>
-      <div id="collapse98" class="collapse" role="tabpanel" aria-labelledby="heading98"
-        data-parent="#accordionEx23">
+      <div id="collapse3" class="collapse" role="tabpanel" aria-labelledby="heading3"
+        data-parent="#accordion">
         <div class="card-body">
           <div class="row my-4">
             <div class="col-md-8">
@@ -120,80 +157,15 @@
   </div>
               
      </div>         
-
+<!-- Footer wie index.php -->
   <footer class="page-footer font-small" >
-   
         <div class="footer-copyright text-center py-3">© 2019 Copyright: Mampf
         </div>
       
       
       </footer>
 
-  <style>
-
-
-@media screen and (min-width: 961px) {
-    .page-footer{
-      background-color: rgb(248,249,250); position:absolute;
-  bottom: 0; width: 100%;
-    }}
-@media screen and (max-width: 961px) {
-    .page-footer{
-      background-color: rgb(248,249,250)
-    }
-    }
-
-.white-text{
-  color: rgb(179, 120, 87)
-}
-        .btn-secondary, .btn-secondary:hover, .btn-secondary:active, .btn-secondary:visited {
-          background-color: rgb(179, 120, 87) !important;
-          border-color:  rgb(179, 120, 87) !important;
-          font-size: 1.5rem!important;
-          line-height: 1.5 !important;}
-          .form-control {
-          font-size: 1.5rem !important;}
-          .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
-          background-color: rgb(179, 120, 87) !important;
-          border-color:  rgb(179, 120, 87) !important;}
-
-    
-.text-secondary{
-  color: rgb(179, 120, 87);
-}
-
-.accordion-section .panel-default > .panel-heading {
-    border: 0;
-    background: #f4f4f4;
-    color: rgb(179, 120, 87);
-    padding: 0;
-}
-.accordion-section .panel-default .panel-title a {
-    display: block;
-    font-style: italic;
-    font-size: 1.5rem;
-}
-.accordion-section .panel-default .panel-title a:after {
-    font-family: 'FontAwesome';
-    font-style: normal;
-    font-size: 3rem;
-    content: "\f106";
-    color: rgb(179, 120, 87);
-    float: right;
-    margin-top: -12px;
-}
-.accordion-section .panel-default .panel-title a.collapsed:after {
-    content: "\f107";
-}
-.accordion-section .panel-default .panel-body {
-    font-size: 1.2rem;
-
-   
  
-}
-            
-        </style>
-
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
