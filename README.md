@@ -30,3 +30,5 @@ Installation steps:
 2. Copy the whole content to "htdocs" folder (contained in "xampp" folder) after the xampp installation (step 2 from above)
 3. start xampp-control.exe in the xampp folder 
 4. Start the apache server and the MySQL database 
+5. Open PHPmyAdmin (Click Admin behind MySQL in the XAMPP Control Panel)
+6. Click the "Importieren" - tab, click "Durchsuchen" and select Mampf.sql.
