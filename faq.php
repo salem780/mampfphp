@@ -41,14 +41,15 @@
     <div class style="padding-bottom: 2%;"></div>
 <div class="accordion md-accordion accordion-1" id="accordionEx23" role="tablist">
     <div class="card">
-      <div class="card-header" role="tab" >
+      <div class="card-header" role="tab" id="heading">
         <h5 class="text-secondary">
-          <a class="white-text font-weight-bold" data-toggle="collapse" href="#collapse96" aria-expanded="true">
+          <a class=" collapsed font white-text" data-toggle="collapse" href="#collapse96" 
+          aria-expanded="false" aria-controls="collapse96">
             Welchen Nutzen bietet mir MAMPF?
           </a>
         </h5>
       </div>
-      <div class="collapse show" role="tabpanel" aria-labelledby="heading96"
+      <div id="collapse96" class="collapse" role="tabpanel" aria-labelledby="heading96"
         data-parent="#accordionEx23">
         <div class="card-body">
           <div class="row my-4">
@@ -56,6 +57,7 @@
               <p class="">Mit MAMPF findest du schnell und einfach den leckersten Lunch – und das schon vom Schreibtisch 
                       oder der Vorlesung aus. Du erhälst täglich aktuelle Mittagsangebote von Restaurants aus Ravensburg – 
                       passend zu deinen Vorlieben und Favoriten. 
+           </p>
             </div>
           </div>
         </div>
@@ -63,8 +65,8 @@
     </div>
     <div class="card">
       <div class="card-header" role="tab" id="heading">
-        <h5>
-          <a class="collapsed font-weight-bold white-text" data-toggle="collapse" href="#collapse97"
+        <h5 class="text-secondary">
+          <a class="collapsed font white-text" data-toggle="collapse" href="#collapse97"
             aria-expanded="false" aria-controls="collapse97">
             Welche Restaurants nehmen teil?
           </a>
@@ -94,9 +96,9 @@
       </div>
     </div>
     <div class="card">
-      <div class="card-header" role="tab" id="heading98">
+      <div class="card-header" role="tab" id="heading">
         <h5 >
-          <a class="collapsed font-weight-bold white-text" data-toggle="collapse" href="#collapse98"
+          <a class="collapsed font white-text" data-toggle="collapse" href="#collapse98"
             aria-expanded="false" aria-controls="collapse98">
             Wie kann ich als Restaurant teilnehmen?
           </a>
@@ -117,10 +119,9 @@
     </div>
   </div>
               
-              
+     </div>         
 
-  <footer class="page-footer font-small" style="background-color: rgb(248,249,250); position:absolute;
-  bottom: 0; width: 100%;">
+  <footer class="page-footer font-small" >
    
         <div class="footer-copyright text-center py-3">© 2019 Copyright: Mampf
         </div>
@@ -129,11 +130,22 @@
       </footer>
 
   <style>
-    a{
-      color: rgb(179, 120, 87) !important;
+
+
+@media screen and (min-width: 961px) {
+    .page-footer{
+      background-color: rgb(248,249,250); position:absolute;
+  bottom: 0; width: 100%;
+    }}
+@media screen and (max-width: 961px) {
+    .page-footer{
+      background-color: rgb(248,249,250)
+    }
     }
 
-
+.white-text{
+  color: rgb(179, 120, 87)
+}
         .btn-secondary, .btn-secondary:hover, .btn-secondary:active, .btn-secondary:visited {
           background-color: rgb(179, 120, 87) !important;
           border-color:  rgb(179, 120, 87) !important;
